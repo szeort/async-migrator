@@ -1,0 +1,30 @@
+{
+  "name": "async-migrator",
+  "description": "Helper Node.js layer async migrations",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "./src",
+  "dependencies": {
+    "esprima": "^4.0.1",
+	"escodegen": "^1.8.1"
+  },
+  "engines": {
+    "node": "^16"
+  },
+  "files": [
+    "src",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+	"start": "node src/index.js",
+    "lint": "eslint -f stylish --ignore-path .gitignore .",
+    "toc": "markdown-toc -i README.md && markdown-toc -i differences.md",
+    "prepareRelease": "npm dedupe && npm shrinkwrap && clean-packages -i && npm prune",
+    "test": "node build/test"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  }
+}
