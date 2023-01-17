@@ -3,6 +3,20 @@
 Use it to migrate a JS project source code to async-await model by replacing sync function calls to await statements.
 The list of functions that must be replaced is of course configurable. 
 
+Example source code:
+
+```
+var conn = $.hdb.getConnection();
+var result = conn.execute('select * from MY_TABLE');
+```
+
+Will be migrated to:
+
+```
+var conn = await $.hdb.getConnection();
+var result = await conn.execute('select * from MY_TABLE');
+```
+
 
 # Use cases
 One typical use case is for example an sync program using fibers/fibrous. Since fibers/fibrous are not working anymore
