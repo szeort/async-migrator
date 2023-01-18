@@ -19,9 +19,9 @@ var result = await conn.execute('select * from MY_TABLE');
 
 
 # Use cases
-A typical use case, for example, is a sync program using _fiber_, _fibers_, or _fibrous_. Since they are not working in Node 16+, this implies a big problem to JS projects willing to run on Node 16+. There's a good logical reason for these packages to not be supported by Node.js anymore: the **async-await** programming model is implemented in Node 16+ and works like a charm.
+A typical use case, for example, is a sync program using _fibers_ or _fibrous_. Since they are not working in Node 16+, this implies a big problem to JS projects willing to run on Node 16+. There's a good logical reason for these packages to not be supported by Node.js anymore: the **async-await** programming model is implemented in Node 16+ and works like a charm.
 
-The **async-await** programming model gives the development experience of a sync programs - short, logical workflow, no callbacks, without complex workarounds like using _fiber_/_fibers_, and without killing performace blocking sync functions. 
+The **async-await** programming model gives the development experience of a sync programs - short, logical workflow, no callbacks, without complex workarounds like using _fibers_/_fibrous_, and without killing performace with blocking sync functions. 
 
 Another use case could be to replace a blocking sync function (which is blocking in C-layer) with an async-await function. For example:
 * *fs.readFile* - this function has a callback
